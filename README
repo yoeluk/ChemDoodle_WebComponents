@@ -1,5 +1,6 @@
-ChemDoodle_WebComponents is a wonderful javascript library created by 
-Kevin Theisen from ChemDoodle and released under the GPL licensing.
+ChemDoodle_WebComponents is a powerful javascript library for chemistry
+featuring a large number of tools created by Kevin Theisen from ChemDoodle 
+and released under the GPL licensing.
 
 My main interest when modifying this code was center around 2D canvas and 
 around jquery-ui. A live implementation of this modified code can be seen
@@ -14,7 +15,4 @@ above url.
 One important thing! It would only be proper if you give prominent credit to 
 ChemDoodle Web Components in whatever you use it for.
 
-
 This file was created by JetBrains WebStorm 6.0.1 for binding GitHub repository
-This file was modified by JetBrains WebStorm 6.0.1 for binding GitHub repository
-This file was modified by JetBrains WebStorm 6.0.1 for binding GitHub repository
