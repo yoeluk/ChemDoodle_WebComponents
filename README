@@ -5,15 +5,14 @@ My main interest when modifying this code was center around 2D canvas and
 around jquery-ui. A live implementation of this modified code can be seen
 on http://www.lewisdots.com/ChemPaint/
 
-ChemDoodle Web Components in its published form can be access on 
-http://web.ChemDoodle.com/installation. These should also be your main source
-of information if you decide to join in and fork this library. If you want to
-the original or perhaps develop a plugin then get the sources from the above 
-url. 
+ChemDoodle Web Components unmodified by me can be obtained from 
+http://web.ChemDoodle.com/installation. This site should also be your main source
+of information if you decide to join in and fork/modify this library. If you want
+to modify the original or perhaps develop a plugin then get the sources from the 
+above url. 
 
-One important thing! Clearly this library was not a small effort and therefore 
-it would only be proper if you give prominent credit to ChemDoodle Web Components
-in whatever you use it for.
+One important thing! It would only be proper if you give prominent credit to 
+ChemDoodle Web Components in whatever you use it for.
 
 
 This file was created by JetBrains WebStorm 6.0.1 for binding GitHub repository
