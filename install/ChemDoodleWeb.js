@@ -4769,9 +4769,9 @@ ChemDoodle.RESIDUE = (function() {
 			var mcosa = m.cos(angle1);
 			var msina = m.sin(angle1);
 			if (specs.pusher_showElectron_2D && this.o1 instanceof structures.Atom) {
-				var pullBack = 8;
+				var pullBack = 5;
 				if (this.o1.isLabelVisible(specs) || this.o1.bondOrder > 1) {
-					pullBack = 11;
+					pullBack = 8;
 				}
 				p1.x -= mcosa * pullBack;
 				p1.y += msina * pullBack;
