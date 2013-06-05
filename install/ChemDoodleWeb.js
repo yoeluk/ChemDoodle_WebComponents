@@ -4775,20 +4775,20 @@ ChemDoodle.RESIDUE = (function() {
 				}
 				p1.x -= mcosa * pullBack;
 				p1.y += msina * pullBack;
-				if (this.numElectron === 2) {
-					var difx = Math.cos(perpendicular) * specs.atoms_lonePairSpread_2D / 2;
-					var dify = -Math.sin(perpendicular) * specs.atoms_lonePairSpread_2D / 2;
-					ctx.beginPath();
-					ctx.arc(p1.x + difx, p1.y + dify, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
-					ctx.fill();
-					ctx.beginPath();
-					ctx.arc(p1.x - difx, p1.y - dify, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
-					ctx.fill();
-				} else {
-					ctx.beginPath();
-					ctx.arc(p1.x, p1.y, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
-					ctx.fill();
-				}
+//				if (this.numElectron === 2) {
+//					var difx = Math.cos(perpendicular) * specs.atoms_lonePairSpread_2D / 2;
+//					var dify = -Math.sin(perpendicular) * specs.atoms_lonePairSpread_2D / 2;
+//					ctx.beginPath();
+//					ctx.arc(p1.x + difx, p1.y + dify, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
+//					ctx.fill();
+//					ctx.beginPath();
+//					ctx.arc(p1.x - difx, p1.y - dify, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
+//					ctx.fill();
+//				} else {
+//					ctx.beginPath();
+//					ctx.arc(p1.x, p1.y, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
+//					ctx.fill();
+//				}
 			}
 			p1.x -= mcosa * 5;
 			p1.y += msina * 5;

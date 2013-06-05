@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e3e2287-b245-4d43-986c-c53c114ffc5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
-    </list>
+    <list default="true" id="9e3e2287-b245-4d43-986c-c53c114ffc5a" name="Default" comment="" />
     <ignored path="ChemDoodle_WebComponents.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370459323027" ignored="false" />
@@ -29,7 +27,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="45" selection-start="990" selection-end="990" vertical-scroll-proportion="0.4311377">
+            <state line="49" column="131" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.88023955">
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -229,7 +227,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="45" selection-start="990" selection-end="990" vertical-scroll-proportion="0.4311377">
+        <state line="49" column="131" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.88023955">
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
