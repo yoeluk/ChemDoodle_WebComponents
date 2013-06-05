@@ -954,6 +954,7 @@ ChemDoodle.sketcher = (function() {
 	_.dblclick = function(e) {
 		if (this.innerdblclick) {
 			this.innerdblclick(e);
+
 		}
 		if (!this.sketcher.hovering) {
 			// center structure
@@ -1906,7 +1907,7 @@ ChemDoodle.sketcher = (function() {
 		} else {
 			if (b.bondOrder === this.bondOrder && b.stereo === this.stereo) {
 				if (b.bondOrder === 1 && b.stereo !== structures.Bond.STEREO_NONE || b.bondOrder === 2 && b.stereo === structures.Bond.STEREO_NONE) {
-					//console.log('flipbondaction calledfrom 1');
+
 					this.sketcher.historyManager.pushUndo(new actions.FlipBondAction(b));
 				}
 			} else {

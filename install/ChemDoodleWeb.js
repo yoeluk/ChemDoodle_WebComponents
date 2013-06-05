@@ -36,7 +36,6 @@
 //  $Author: kevin $
 //  $LastChangedDate: 2010-12-08 20:53:47 -0500 (Wed, 08 Dec 2010) $
 //
-
 var ChemDoodle = (function() {
 	'use strict';
 	var c = {};
@@ -4747,7 +4746,7 @@ ChemDoodle.RESIDUE = (function() {
 			ctx.lineCap = 'butt';
 			var p1 = this.o1 instanceof structures.Atom ? new structures.Point(this.o1.x, this.o1.y) : this.o1.getCenter();
 			var p2 = this.o2 instanceof structures.Atom ? new structures.Point(this.o2.x, this.o2.y) : this.o2.getCenter();
-			var controlDist = m.max(50, p1.distance(p2));
+			var controlDist = m.max(30, p1.distance(p2)/2);
 			var c1 = getControlPoint(p1, this.o1, controlDist);
 			var c2 = getControlPoint(p2, this.o2, controlDist);
 			// electrons
@@ -4770,9 +4769,9 @@ ChemDoodle.RESIDUE = (function() {
 			var mcosa = m.cos(angle1);
 			var msina = m.sin(angle1);
 			if (specs.pusher_showElectron_2D && this.o1 instanceof structures.Atom) {
-				var pullBack = 5;
+				var pullBack = 8;
 				if (this.o1.isLabelVisible(specs) || this.o1.bondOrder > 1) {
-					pullBack = 8;
+					pullBack = 11;
 				}
 				p1.x -= mcosa * pullBack;
 				p1.y += msina * pullBack;
@@ -4835,10 +4834,25 @@ ChemDoodle.RESIDUE = (function() {
 			ctx.bezierCurveTo(c1.x, c1.y, c2.x, c2.y, p2.x, p2.y);
 			ctx.stroke();
 			this.cache = [ p1, c1, c2, p2 ];
+
+            var gradLoc = 0;
+            this.curveBonds = [];
+            this.curveBonds.push(this.cache[0]);
+            while (gradLoc <= 1) {
+                var localGradient = jsb.gradientAtPoint(this.cache, gradLoc);
+                gradLoc += 0.01;
+                if (0.005 < localGradient < 0.005 || 0.995 < localGradient < -0.995) {
+                    var localPoint = jsb.pointOnCurve(this.cache, gradLoc);
+                    var localPointPoint = new structures.Point(localPoint.x, localPoint.y);
+                    this.curveBonds.push(localPointPoint);
+                    gradLoc += 0.01;
+                }
+            }
+            this.curveBonds.push(this.cache[3]);
 		}
 	};
 	_.getPoints = function() {
-		return [];
+        return this.curveBonds;
 	};
 	_.isOver = function(p, barrier) {
 		var r = jsb.distanceFromCurve(p, this.cache);
@@ -8811,6 +8825,8 @@ ChemDoodle.RESIDUE = (function() {
 //  $Author: kevin $
 //  $LastChangedDate: 2010-12-08 20:53:47 -0500 (Wed, 08 Dec 2010) $
 //
+
+/*
 (function(io, structures, d2) {
 	'use strict';
 	io.JSONInterpreter = function() {
@@ -9122,6 +9138,192 @@ ChemDoodle.RESIDUE = (function() {
 	};
 
 })(ChemDoodle.io, ChemDoodle.structures, ChemDoodle.structures.d2);
+
+*/
+
+(function (d, b, a, f, g) {
+    b.JSONInterpreter = function () {};
+    var e = b.JSONInterpreter.prototype;
+    e.contentTo = function (a, e) {
+        for (var b = 0, d = 0, f = 0, g = a.length; f < g; f++) {
+            for (var o = a[f], m = 0, k = o.atoms.length; m < k; m++) o.atoms[m].tmpid = "a" + b++;
+            m = 0;
+            for (k = o.bonds.length; m < k; m++) o.bonds[m].tmpid = "b" + d++
+        }
+        f = b = 0;
+        for (g = e.length; f < g; f++) e[f].tmpid = "s" + b++;
+        b = {};
+        if (a && 0 < a.length) {
+            b.m = [];
+            f = 0;
+            for (g = a.length; f < g; f++) b.m.push(this.molTo(a[f]))
+        }
+        if (e && 0 < e.length) {
+            b.s = [];
+            f = 0;
+            for (g = e.length; f < g; f++) b.s.push(this.shapeTo(e[f]))
+        }
+        f = 0;
+        for (g =
+                 a.length; f < g; f++) {
+            o = a[f];
+            m = 0;
+            for (k = o.atoms.length; m < k; m++) o.atoms[m].tmpid = void 0;
+            m = 0;
+            for (k = o.bonds.length; m < k; m++) o.bonds[m].tmpid = void 0
+        }
+        f = 0;
+        for (g = e.length; f < g; f++) e[f].tmpid = void 0;
+        return b
+    };
+    e.contentFrom = function (a) {
+        var e = {
+            molecules: [],
+            shapes: []
+        };
+        if (a.m)
+            for (var b = 0, d = a.m.length; b < d; b++) e.molecules.push(this.molFrom(a.m[b]));
+        if (a.s) {
+            b = 0;
+            for (d = a.s.length; b < d; b++) e.shapes.push(this.shapeFrom(a.s[b], e.molecules))
+        }
+        b = 0;
+        for (d = e.molecules.length; b < d; b++) {
+            a = e.molecules[b];
+            for (var f = 0, g = a.atoms.length; f <
+                g; f++) a.atoms[f].tmpid = void 0;
+            f = 0;
+            for (g = a.bonds.length; f < g; f++) a.bonds[f].tmpid = void 0
+        }
+        b = 0;
+        for (d = e.shapes.length; b < d; b++) e.shapes[b].tmpid = void 0;
+        return e
+    };
+    e.molTo = function (c) {
+        for (var b = {
+            a: []
+        }, e = 0, d = c.atoms.length; e < d; e++) {
+            var f = c.atoms[e],
+                g = {
+                    x: f.x,
+                    y: f.y
+                };
+            f.tmpid && (g.i = f.tmpid);
+            "C" !== f.label && (g.l = f.label);
+            0 !== f.z && (g.z = f.z);
+            0 !== f.charge && (g.c = f.charge); - 1 !== f.mass && (g.m = f.mass);
+            0 !== f.numRadical && (g.r = f.numRadical);
+            0 !== f.numLonePair && (g.p = f.numLonePair);
+            f.any && (g.q = !0); - 1 !== f.rgroup && (g.rg = f.rgroup);
+            b.a.push(g)
+        }
+        if (0 < c.bonds.length) {
+            b.b = [];
+            e = 0;
+            for (d = c.bonds.length; e < d; e++) f = c.bonds[e], g = {
+                b: c.atoms.indexOf(f.a1),
+                e: c.atoms.indexOf(f.a2)
+            }, f.tmpid && (g.i = f.tmpid), 1 !== f.bondOrder && (g.o = f.bondOrder), f.stereo !== a.Bond.STEREO_NONE && (g.s = f.stereo), b.b.push(g)
+        }
+        return b
+    };
+    e.molFrom = function (c) {
+        for (var b = new a.Molecule, e = 0, d = c.a.length; e < d; e++) {
+            var f = c.a[e],
+                g = new a.Atom(f.l ? f.l : "C", f.x, f.y);
+            f.i && (g.tmpid = f.i);
+            f.z && (g.z = f.z);
+            f.c && (g.charge = f.c);
+            f.m && (g.mass = f.m);
+            f.r && (g.numRadical = f.r);
+            f.p && (g.numLonePair = f.p);
+            f.q && (g.any = !0);
+            f.rg && (g.rgroup = f.rg);
+            void 0 !== f.p_h && (g.hetatm = f.p_h);
+            void 0 !== f.p_w && (g.isWater = f.p_w);
+            void 0 !== f.p_d && (g.closestDistance = f.p_d);
+            b.atoms.push(g)
+        }
+        if (c.b) {
+            e = 0;
+            for (d = c.b.length; e < d; e++) f = c.b[e], g = new a.Bond(b.atoms[f.b], b.atoms[f.e], f.o ? f.o : 1), f.i && (g.tmpid = f.i), f.s && (g.stereo = f.s), b.bonds.push(g)
+        }
+        return b
+    };
+    e.shapeTo = function (a) {
+        var b = {};
+        a.tmpid && (b.i = a.tmpid);
+        a instanceof f.Line ? (b.t = "Line", b.x1 = a.p1.x, b.y1 = a.p1.y, b.x2 = a.p2.x, b.y2 = a.p2.y, b.a = a.arrowType) : a instanceof f.Pusher ? (b.t =
+            "Pusher", b.o1 = a.o1.tmpid, b.o2 = a.o2.tmpid, 1 !== a.numElectron && (b.e = a.numElectron)) : a instanceof f.Bracket && (b.t = "Bracket", b.x1 = a.p1.x, b.y1 = a.p1.y, b.x2 = a.p2.x, b.y2 = a.p2.y, 0 !== a.charge && (b.c = a.charge), 0 !== a.mult && (b.m = a.mult), 0 !== a.repeat && (b.r = a.repeat));
+        return b
+    };
+    e.shapeFrom = function (c, b) {
+        var e;
+        if ("Line" === c.t) e = new f.Line(new a.Point(c.x1, c.y1), new a.Point(c.x2, c.y2)), e.arrowType = c.a;
+        else if ("Pusher" === c.t) {
+            var d, g;
+            e = 0;
+            for (var l = b.length; e < l; e++) {
+                for (var m = b[e], v = 0, k = m.atoms.length; v < k; v++) {
+                    var t =
+                        m.atoms[v];
+                    t.tmpid === c.o1 ? d = t : t.tmpid === c.o2 && (g = t)
+                }
+                v = 0;
+                for (k = m.bonds.length; v < k; v++) t = m.bonds[v], t.tmpid === c.o1 ? d = t : t.tmpid === c.o2 && (g = t)
+            }
+            e = new f.Pusher(d, g);
+            c.e && (e.numElectron = c.e)
+        } else "Bracket" === c.t && (e = new f.Bracket(new a.Point(c.x1, c.y1), new a.Point(c.x2, c.y2)), void 0 !== c.c && (e.charge = c.c), void 0 !== c.m && (e.mult = c.m), void 0 !== c.r && (e.repeat = c.r));
+        return e
+    };
+    e.pdbFrom = function (a) {
+        var b = this.molFrom(a.mol);
+        b.findRings = !1;
+        b.fromJSON = !0;
+        b.chains = this.chainsFrom(a.ribbons);
+        return b
+    };
+    e.chainsFrom = function (c) {
+        for (var b = [], e = 0, d = c.cs.length; e < d; e++) {
+            for (var f = c.cs[e], g = [], m = 0, v = f.length; m < v; m++) {
+                var k = f[m],
+                    t = new a.Residue;
+                t.name = k.n;
+                t.cp1 = new a.Atom("", k.x1, k.y1, k.z1);
+                t.cp2 = new a.Atom("", k.x2, k.y2, k.z2);
+                k.x3 && (t.cp3 = new a.Atom("", k.x3, k.y3, k.z3), t.cp4 = new a.Atom("", k.x4, k.y4, k.z4), t.cp5 = new a.Atom("", k.x5, k.y5, k.z5));
+                t.helix = k.h;
+                t.sheet = k.s;
+                t.arrow = k.a;
+                g.push(t)
+            }
+            b.push(g)
+        }
+        return b
+    };
+    var m = new b.JSONInterpreter;
+    d.readJSON = function (a) {
+        var b;
+        try {
+            b = g.parse(a)
+        } catch (e) {
+            return
+        }
+        if (b) return b.m || b.s ?
+            m.contentFrom(b) : b.a ? {
+            molecules: [m.molFrom(b)],
+            shapes: []
+        }: {
+            molecules: [],
+            shapes: []
+        }
+    };
+    d.writeJSON = function (a, b) {
+        return g.stringify(m.contentTo(a, b))
+    }
+})(ChemDoodle, ChemDoodle.io, ChemDoodle.structures, ChemDoodle.structures.d2, JSON);
+
 (function(c, io, structures) {
 	'use strict';
 	io.RXNInterpreter = function() {

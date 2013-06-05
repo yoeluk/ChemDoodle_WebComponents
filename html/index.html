@@ -33,13 +33,15 @@
 	ChemDoodle.ELEMENT['H'].jmolColor = 'black';
 	ChemDoodle.ELEMENT['C'].jmolColor = '#737373';
 	ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
-	var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 1006, 670,{useServices:false, isMobile:true});
+	var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 800, 570,{useServices:false, isMobile:true});
 	sketcher.specs.atoms_displayTerminalCarbonLabels_2D = false;
 	sketcher.specs.atoms_useJMOLColors = true;
 	sketcher.specs.bonds_clearOverlaps_2D = false; // If this is true you need to change the globalCompisitionOperation before drawing the overlap background
 	sketcher.specs.bondLength_2D = 50;
 	sketcher.specs.bonds_symmetrical_2D = false;
 	sketcher.specs.bonds_saturationWidth_2D = .18;
+	//sketcher.specs.bonds_overlapClearWidth_2D = 0.7;
+	//sketcher.specs.backgroundColor = undefined;
 	sketcher.specs.scale = 1;
 	sketcher.specs.shapes_color = 'black';
 	sketcher.repaint();
