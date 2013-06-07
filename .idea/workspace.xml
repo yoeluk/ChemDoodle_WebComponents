@@ -2,12 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e3e2287-b245-4d43-986c-c53c114ffc5a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChemDoodle_WebComponents.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370476643311" ignored="false" />
+    <file path="/Dummy.txt" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546656644" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/catalog.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/html5/xhtml5.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/relaxng.rng" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xhtml1-transitional.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xhtml1-strict.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xsl" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/documentation.xml" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/XMLSchema.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/xpath/lib/xpath.jar!/org/intellij/lang/xpath/xslt/resources/xslt-schema.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xinclude.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xslt-1_0.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xslt-2_0.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xml.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +44,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="47" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.4071856">
+            <state line="24" column="98" selection-start="990" selection-end="990" vertical-scroll-proportion="0.37214887">
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -43,7 +57,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
                 <marker date="1370466336000" expanded="false" signature="315847:315871" placeholder="..." />
               </folding>
             </state>
@@ -74,10 +87,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="479" />
+    <option name="x" value="20" />
     <option name="y" value="22" />
     <option name="width" value="1900" />
-    <option name="height" value="1005" />
+    <option name="height" value="1003" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -105,7 +118,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -154,10 +166,23 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="PublishConfig">
+    <servers>
+      <server id="746b53b1-3bd7-470d-bae8-405c6ef7dece">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
+    </servers>
   </component>
   <component name="RunManager">
     <list size="0" />
@@ -172,14 +197,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="479" y="22" width="1900" height="1005" extended-state="0" />
-    <editor active="true" />
+    <frame x="20" y="22" width="1900" height="1003" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24933404" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2518878" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25458467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -220,7 +245,7 @@
     <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORISONTALLY" value="true" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
     <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
     <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
@@ -268,7 +293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
             <marker date="1370466336000" expanded="false" signature="315847:315871" placeholder="..." />
           </folding>
         </state>
@@ -283,21 +307,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
+    <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
+        <state line="24" column="98" selection-start="990" selection-end="990" vertical-scroll-proportion="0.37214887">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1370466336000" expanded="false" signature="315847:315871" placeholder="..." />
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/index.html">
+    <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="47" selection-start="1151" selection-end="1151" vertical-scroll-proportion="0.4071856">
+        <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1370466336000" expanded="false" signature="315847:315871" placeholder="..." />
           </folding>
         </state>
       </provider>
