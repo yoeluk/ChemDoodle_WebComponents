@@ -4851,6 +4851,9 @@ ChemDoodle.RESIDUE = (function() {
             this.curveBonds.push(this.cache[3]);
 		}
 	};
+    _.getCoords = function() {
+        return this.cache;
+    }
 	_.getPoints = function() {
         return this.curveBonds;
 	};
@@ -9254,7 +9257,7 @@ ChemDoodle.RESIDUE = (function() {
         var b = {};
         a.tmpid && (b.i = a.tmpid);
         a instanceof f.Line ? (b.t = "Line", b.x1 = a.p1.x, b.y1 = a.p1.y, b.x2 = a.p2.x, b.y2 = a.p2.y, b.a = a.arrowType) : a instanceof f.Pusher ? (b.t =
-            "Pusher", b.o1 = a.o1.tmpid, b.o2 = a.o2.tmpid, 1 !== a.numElectron && (b.e = a.numElectron)) : a instanceof f.Bracket && (b.t = "Bracket", b.x1 = a.p1.x, b.y1 = a.p1.y, b.x2 = a.p2.x, b.y2 = a.p2.y, 0 !== a.charge && (b.c = a.charge), 0 !== a.mult && (b.m = a.mult), 0 !== a.repeat && (b.r = a.repeat));
+            "Pusher", b.coordsPush = a.getCoords(), b.o1 = a.o1.tmpid, b.o2 = a.o2.tmpid, 1 !== a.numElectron && (b.e = a.numElectron)) : a instanceof f.Bracket && (b.t = "Bracket", b.x1 = a.p1.x, b.y1 = a.p1.y, b.x2 = a.p2.x, b.y2 = a.p2.y, 0 !== a.charge && (b.c = a.charge), 0 !== a.mult && (b.m = a.mult), 0 !== a.repeat && (b.r = a.repeat));
         return b
     };
     e.shapeFrom = function (c, b) {

@@ -192,8 +192,36 @@ ChemDoodle.sketcher = (function() {
 	_.innerReverse = function() {
 		this.sketcher.removeShape(this.s);
 	};
-
 })(ChemDoodle.sketcher.actions);
+
+(function(act) {
+    'use strict';
+    act.AddMoleculesAndShapesAction = function(sketcher, ms, ss) {
+        this.sketcher = sketcher;
+        this.ms = ms;
+        this.ss = ss;
+    };
+    var _ = act.AddMoleculesAndShapesAction.prototype = new act._Action();
+    _.innerForward = function() {
+        for (var i = 0, l = this.ms.length; i < l; i++) {
+            console.log('push here');
+            this.sketcher.molecules.push(this.ms[i]);
+        }
+        for (var i = 0, l = this.ss.length; i < l; i++) {
+            this.sketcher.shapes.push(this.ss[i]);
+        }
+    };
+    _.innerReverse = function() {
+        for (var i = 0, l = this.ms.length; i < l; i++) {
+            this.sketcher.removeMolecule(this.ms[i]);
+        }
+        for (var i = 0, l = this.ss.length; i < l; i++) {
+            this.sketcher.removeShape(this.ss[i]);
+        }
+    };
+})(ChemDoodle.sketcher.actions);
+
+
 //
 //  Copyright 2009 iChemLabs, LLC.  All rights reserved.
 //
@@ -214,7 +242,6 @@ ChemDoodle.sketcher = (function() {
 			this.orderAfter = b.bondOrder + 1;
 			if (this.orderAfter > 3) {
 			this.orderAfter = 1;
-			//sketcher.historyManager.pushUndo(new actions.FlipBondAction(b));
 			}
 		    this.stereoAfter = Bond.STEREO_NONE;
 		}
@@ -591,7 +618,6 @@ ChemDoodle.sketcher = (function() {
 	};
 	var _ = actions.FlipBondAction.prototype = new actions._Action();
 	_.innerForward = function() {
-		//console.log('flipbondaction');
 		var temp = this.b.a1;
 		this.b.a1 = this.b.a2;
 		this.b.a2 = temp;
@@ -3870,7 +3896,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 //  $LastChangedDate: 2011-02-06 18:27:15 -0500 (Sun, 06 Feb 2011) $
 //
 
-(function(math, monitor, tools) {
+(function(math, monitor, tools, sk) {
 	'use strict';
 	tools.Lasso = function(sketcher) {
 		this.sketcher = sketcher;
@@ -4037,6 +4063,10 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			this.bounds = undefined;
 		}
 	};
+    _.addContent = function(sk, ms, ss) {
+        console.log('this.this');
+        this.sketcher.historyManager.pushUndo(new this.sketcher.actions.AddMoleculesAndShapesAction(sk, ms, ss));
+    };
 	_.empty = function() {
 		for ( var i = 0, ii = this.atoms.length; i < ii; i++) {
 			this.atoms[i].isLassoed = false;
@@ -4117,7 +4147,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		}
 	};
 
-})(ChemDoodle.math, ChemDoodle.monitor, ChemDoodle.sketcher.tools);
+})(ChemDoodle.math, ChemDoodle.monitor, ChemDoodle.sketcher.tools, ChemDoodle.sketcher);
 //
 //  Copyright 2009 iChemLabs, LLC.  All rights reserved.
 //
