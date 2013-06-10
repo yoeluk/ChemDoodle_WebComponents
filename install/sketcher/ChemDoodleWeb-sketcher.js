@@ -194,17 +194,16 @@ ChemDoodle.sketcher = (function() {
 	};
 })(ChemDoodle.sketcher.actions);
 
-(function(act) {
+(function(actions) {
     'use strict';
-    act.AddMoleculesAndShapesAction = function(sketcher, ms, ss) {
+    actions.AddMoleculesAndShapesAction = function(sketcher, ms, ss) {
         this.sketcher = sketcher;
         this.ms = ms;
         this.ss = ss;
     };
-    var _ = act.AddMoleculesAndShapesAction.prototype = new act._Action();
+    var _ = actions.AddMoleculesAndShapesAction.prototype = new actions._Action();
     _.innerForward = function() {
         for (var i = 0, l = this.ms.length; i < l; i++) {
-            console.log('push here');
             this.sketcher.molecules.push(this.ms[i]);
         }
         for (var i = 0, l = this.ss.length; i < l; i++) {
@@ -4063,10 +4062,6 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			this.bounds = undefined;
 		}
 	};
-    _.addContent = function(sk, ms, ss) {
-        console.log('this.this');
-        this.sketcher.historyManager.pushUndo(new this.sketcher.actions.AddMoleculesAndShapesAction(sk, ms, ss));
-    };
 	_.empty = function() {
 		for ( var i = 0, ii = this.atoms.length; i < ii; i++) {
 			this.atoms[i].isLassoed = false;
@@ -4173,7 +4168,8 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			// If pre-created, wait until the last button image loads before
 			// calling setup.
 			var self = this;
-			if (document.getElementById(this.id)) {
+            var divEl = document.getElementById(this.id)
+			if (divEl) {
 				q('#' + id + '_button_attribute_lonePair_decrement_icon').load(function() {
 					self.toolbarManager.setup();
 				});
@@ -4205,6 +4201,19 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			this.startAtom.isLone = true;
 			this.lasso = new tools.Lasso(this);
 		}
+//        if (document.addEventListener) {
+//            document.getElementById('sketcher').addEventListener('contextmenu', function(e) {
+//               if ( this.molecules.length ) {
+//                    alert(this.id + " You've tried to open context menu"); //here you draw your own menu
+//                } else alert("Damm");
+//                e.preventDefault();
+//            }, false);
+//        } else {
+//            document.getElementById('sketcher').attachEvent('oncontextmenu', function() {
+//                alert("You've tried to open context menu");
+//                window.event.returnValue = false;
+//            });
+//        }
 	};
 	var _ = c.SketcherCanvas.prototype = new c._Canvas();
 	_.drawSketcherDecorations = function(ctx) {
