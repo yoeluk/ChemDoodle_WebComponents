@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e3e2287-b245-4d43-986c-c53c114ffc5a" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/jquery-1.10.1.min.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/ChemDoodleWeb-sketcher.js" afterPath="$PROJECT_DIR$/install/sketcher/ChemDoodleWeb-sketcher.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/ChemDoodleWeb.js" afterPath="$PROJECT_DIR$/install/ChemDoodleWeb.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChemDoodle_WebComponents.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378886752812" ignored="false" />
+    <file path="/Dummy.txt" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378908085897" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/catalog.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
@@ -23,7 +26,10 @@
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xslt-1_0.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xslt-2_0.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xml.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
-    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/html/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378887744055" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/html/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378891499188" ignored="false" />
+    <file path="/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378908292381" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/install/sketcher/jquery-ui-1.10.3.custom.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378893099947" ignored="false" />
+    <file path="/jquery-ui-1.10.3.custom.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378892615873" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,21 +52,10 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="0" selection-start="2836" selection-end="2836" vertical-scroll-proportion="1.173913">
+            <state line="6" column="83" selection-start="442" selection-end="442" vertical-scroll-proportion="0.11363637">
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChemDoodleWeb.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="28" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1374485808000" expanded="false" signature="320510:320534" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -90,8 +85,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="495" />
-    <option name="y" value="42" />
+    <option name="x" value="138" />
+    <option name="y" value="22" />
     <option name="width" value="1576" />
     <option name="height" value="975" />
   </component>
@@ -150,6 +145,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="install" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="install" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="html" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -185,7 +212,7 @@
     </configuration>
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
       <JSDebuggerConfigurationSettings>
-        <option name="engineId" />
+        <option name="engineId" value="embedded" />
         <option name="fileUrl" />
       </JSDebuggerConfigurationSettings>
       <method />
@@ -220,19 +247,22 @@
       <created>1378886768624</created>
       <updated>1378886768624</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update a typo in the html">
+      <created>1378888616970</created>
+      <updated>1378888616970</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="495" y="42" width="1576" height="975" extended-state="0" />
+    <frame x="138" y="22" width="1576" height="975" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24933404" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12745099" sideWeight="0.67094517" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25816995" sideWeight="0.67094517" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -242,6 +272,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -322,9 +353,7 @@
     <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1374485808000" expanded="false" signature="320510:320534" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -341,9 +370,7 @@
     <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1374485808000" expanded="false" signature="320510:320534" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -359,16 +386,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="28" selection-start="2789" selection-end="2789" vertical-scroll-proportion="0.0">
+        <state line="95" column="28" selection-start="2789" selection-end="2789" vertical-scroll-proportion="1.0661764">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb-libs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1374485808000" expanded="false" signature="320510:320534" placeholder="..." />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="2836" selection-end="2836" vertical-scroll-proportion="1.173913">
+        <state line="6" column="83" selection-start="442" selection-end="442" vertical-scroll-proportion="0.11363637">
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />

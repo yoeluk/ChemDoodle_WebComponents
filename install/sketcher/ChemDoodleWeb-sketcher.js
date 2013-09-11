@@ -1815,11 +1815,11 @@ ChemDoodle.sketcher = (function() {
 		ctx.globalCompositeOperation = 'source-over';
 		if (this.sketcher.lasso.bounds) {
             if (!paintRotate ) {
-                var rotateBuffer = 18 / this.sketcher.specs.scale;
-                ctx.fillStyle = 'rgba(244,166,0,.2)';
+                var rotateBuffer = 22 / this.sketcher.specs.scale;
+                ctx.fillStyle = 'rgba(120,160,187,.2)'; //'rgba(244,166,0,.2)';
             } else {
-                var rotateBuffer = 18 / this.sketcher.specs.scale;
-                ctx.fillStyle = ctx.fillStyle = 'rgba(244,166,0,.2)';
+                var rotateBuffer = 22 / this.sketcher.specs.scale;
+                ctx.fillStyle = ctx.fillStyle = 'rgba(120,160,187,.2)';
             }
 			var b = this.sketcher.lasso.bounds;
 			ctx.beginPath();
@@ -4054,7 +4054,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			for ( var i = 0, ii = this.shapes.length; i < ii; i++) {
 				this.bounds.expand(this.shapes[i].getBounds());
 			}
-			var buffer = 15;
+			var buffer = 5;
 			this.bounds.minX -= buffer;
 			this.bounds.minY -= buffer;
 			this.bounds.maxX += buffer;
@@ -4077,7 +4077,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		this.sketcher.repaint();
 	};
 	_.draw = function(ctx, specs) {
-		ctx.strokeStyle = 'red';
+		ctx.strokeStyle = 'blue';
 		ctx.lineWidth = 0.5 / specs.scale;
 	
 		if (ctx.setLineDash !== undefined) {
