@@ -1,40 +1,38 @@
 <html>
 <head>
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<link rel="stylesheet" href="../install/ChemDoodleWeb.css" type="text/css">
-<link rel="stylesheet" href="../install/sketcher/jquery-ui-1.9.2.custom.css" type="text/css">
-<script type="text/javascript" src="../install/ChemDoodleWeb-libs.js"></script>
-<script type="text/javascript" src="../install/ChemDoodleWeb.js"></script>
-<script type="text/javascript" src="../install/sketcher/jquery-ui-1.9.2.custom.min.js"></script>
-<script type="text/javascript" src="../install/sketcher/ChemDoodleWeb-sketcher.js"></script>
-	
-<script>
-	console = new Object();
-	console.log = function(log) {
-		var iframe = document.createElement("IFRAME");
-		iframe.setAttribute("src", "ios-log:#iOS#" + log);
-		document.documentElement.appendChild(iframe);
-		iframe.parentNode.removeChild(iframe);
-		iframe = null;
-	}
-	console.debug = console.log;
-	console.info = console.log;
-	console.warn = console.log;
-	console.error = console.log;
-</script>
-	
-<title>ChemPaint made from ChemDoodle Web Component</title>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="stylesheet" href="../install/ChemDoodleWeb.css" type="text/css">
+    <link rel="stylesheet" href="../install/sketcher/jquery-ui-1.9.2.custom.css" type="text/css">
+    <script type="text/javascript" src="../install/ChemDoodleWeb-libs.js"></script>
+    <script type="text/javascript" src="../install/ChemDoodleWeb.js"></script>
+    <script type="text/javascript" src="../install/sketcher/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="../install/sketcher/ChemDoodleWeb-sketcher.js"></script>
+
+    <script>
+        console = new Object();
+        console.log = function(log) {
+            var iframe = document.createElement("IFRAME");
+            iframe.setAttribute("src", "ios-log:#iOS#" + log);
+            document.documentElement.appendChild(iframe);
+            iframe.parentNode.removeChild(iframe);
+            iframe = null;
+        }
+        console.debug = console.log;
+        console.info = console.log;
+        console.warn = console.log;
+        console.error = console.log;
+    </script>
+
+    <title>ChemPaint made from ChemDoodle Web Component</title>
 
 </head>
 <body style="background-color:#F0F0F0;">
-    <div id="container"  style="">
-        <div id="mySketcher"></div>
-    </div>
+<div id="mySketcher">
     <script>
         ChemDoodle.ELEMENT['H'].jmolColor = 'black';
         ChemDoodle.ELEMENT['C'].jmolColor = '#737373';
         ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
-        var sketcher = new ChemDoodle.SketcherCanvas('mySketcher', 800, 570,{useServices:false, isMobile:true});
+        var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 800, 570,{useServices:false, isMobile:true});
         sketcher.specs.atoms_displayTerminalCarbonLabels_2D = false;
         sketcher.specs.atoms_useJMOLColors = true;
         sketcher.specs.bonds_clearOverlaps_2D = false; // If this is true you need to change the globalCompisitionOperation before drawing the overlap background
@@ -47,18 +45,19 @@
         sketcher.specs.shapes_color = 'black';
         sketcher.repaint();
     </script>
-    <br>
-    <div id="tempBox" style="display: none">
-        <script>
-            var viewer = new ChemDoodle.ViewerCanvas('myPNG', 100, 100);
-            viewer.specs.atoms_displayTerminalCarbonLabels_2D = false;
-            viewer.specs.atoms_useJMOLColors = true;
-            viewer.specs.bonds_clearOverlaps_2D = false; // If this is true you need to change the globalCompisitionOperation before drawing the overlap background
-            viewer.specs.bondLength_2D = 50;
-            viewer.specs.bonds_symmetrical_2D = false;
-            viewer.specs.bonds_saturationWidth_2D = .18;
-            viewer.repaint();
-        </script>
-    </div>
+</div>
+<br>
+<div id="tempBox" style="display: none">
+    <script>
+        var viewer = new ChemDoodle.ViewerCanvas('myPNG', 100, 100);
+        viewer.specs.atoms_displayTerminalCarbonLabels_2D = false;
+        viewer.specs.atoms_useJMOLColors = true;
+        viewer.specs.bonds_clearOverlaps_2D = false; // If this is true you need to change the globalCompisitionOperation before drawing the overlap background
+        viewer.specs.bondLength_2D = 50;
+        viewer.specs.bonds_symmetrical_2D = false;
+        viewer.specs.bonds_saturationWidth_2D = .18;
+        viewer.repaint();
+    </script>
+</div>
 </body>
 </html>
