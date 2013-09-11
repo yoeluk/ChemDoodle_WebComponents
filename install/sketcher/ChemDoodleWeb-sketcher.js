@@ -1712,6 +1712,7 @@ ChemDoodle.sketcher = (function() {
 				return;
 			}
 			// move structure
+            // console.log('hello quick translation');
 			var dif = new structures.Point(e.p.x, e.p.y);
 			dif.sub(this.sketcher.lastPoint);
 			if (!this.parentAction) {
@@ -4053,7 +4054,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			for ( var i = 0, ii = this.shapes.length; i < ii; i++) {
 				this.bounds.expand(this.shapes[i].getBounds());
 			}
-			var buffer = 5;
+			var buffer = 15;
 			this.bounds.minX -= buffer;
 			this.bounds.minY -= buffer;
 			this.bounds.maxX += buffer;
@@ -4080,10 +4081,13 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		ctx.lineWidth = 0.5 / specs.scale;
 	
 		if (ctx.setLineDash !== undefined) {
+
 		 // new feature in HTML5, not yet supported
 		 // everywhere, so don't use as it is unstable
 			ctx.setLineDash([5]);
+
 		}
+
 		if (this.points.length > 0) {
 			if (this.mode === tools.Lasso.MODE_RECTANGLE_MARQUEE) {
 				if (this.points.length === 2) {

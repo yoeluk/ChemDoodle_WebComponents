@@ -2291,7 +2291,6 @@ ChemDoodle.RESIDUE = (function() {
 		var font = specs.getFontString(specs.atoms_font_size_2D, specs.atoms_font_families_2D, specs.atoms_font_bold_2D, specs.atoms_font_italic_2D);
 		ctx.font = font;
 		ctx.fillStyle = specs.atoms_color;
-		//ctx.globalCompositeOperation = 'source-over';
 		if (!this.any && this.rgroup === -1) {
 			if (specs.atoms_useJMOLColors) {
 				ctx.fillStyle = ELEMENT[this.label].jmolColor;
@@ -2645,7 +2644,6 @@ ChemDoodle.RESIDUE = (function() {
 		var dist = this.a1.distance(this.a2);
 		var difX = x2 - x1;
 		var difY = y2 - y1;
-		//ctx.globalCompositeOperation = 'destination-over';
  
 		if (specs.atoms_display && !specs.atoms_circles_2D && this.a1.isLabelVisible(specs) && this.a1.textBounds) {
 			var distShrink = 0;
@@ -2704,29 +2702,29 @@ ChemDoodle.RESIDUE = (function() {
 		}
  
 		 if (this.a1.isLassoed && this.a2.isLassoed) {
-			 var grd = ctx.createLinearGradient(x1, y1, x2, y2);
-			 ctx.globalCompositeOperation = 'destination-over';
-			 grd.addColorStop(0, 'rgba(204, 237, 167, 1)');//'rgba(212, 99, 0, 0)');
-			 grd.addColorStop(0.5, 'rgba(129, 208, 40, 1)');//'rgba(212, 99, 0, 0.8)');
-			 grd.addColorStop(1, 'rgba(204, 237, 167, 1)');//'rgba(212, 99, 0, 0)');
-			 var useDist = 2;
-			 var perpendicular = this.a1.angle(this.a2) + m.PI / 2;
-			 var mcosp = m.cos(perpendicular);
-			 var msinp = m.sin(perpendicular);
-			 var cx1 = x1 - mcosp * useDist;
-			 var cy1 = y1 + msinp * useDist;
-			 var cx2 = x1 + mcosp * useDist;
-			 var cy2 = y1 - msinp * useDist;
-			 var cx3 = x2 + mcosp * useDist;
-			 var cy3 = y2 - msinp * useDist;
-			 var cx4 = x2 - mcosp * useDist;
-			 var cy4 = y2 + msinp * useDist;
+//			 var grd = ctx.createLinearGradient(x1, y1, x2, y2);
+//			 ctx.globalCompositeOperation = 'destination-over';
+//			 grd.addColorStop(0, 'rgba(204, 237, 167, 1)');//'rgba(212, 99, 0, 0)');
+//			 grd.addColorStop(0.5, 'rgba(129, 208, 40, 1)');//'rgba(212, 99, 0, 0.8)');
+//			 grd.addColorStop(1, 'rgba(204, 237, 167, 1)');//'rgba(212, 99, 0, 0)');
+//			 var useDist = 2;
+//			 var perpendicular = this.a1.angle(this.a2) + m.PI / 2;
+//			 var mcosp = m.cos(perpendicular);
+//			 var msinp = m.sin(perpendicular);
+//			 var cx1 = x1 - mcosp * useDist;
+//			 var cy1 = y1 + msinp * useDist;
+//			 var cx2 = x1 + mcosp * useDist;
+//			 var cy2 = y1 - msinp * useDist;
+//			 var cx3 = x2 + mcosp * useDist;
+//			 var cy3 = y2 - msinp * useDist;
+//			 var cx4 = x2 - mcosp * useDist;
+//			 var cy4 = y2 + msinp * useDist;
 			 //Enable all but the last line before Kevin's Style (never the last line!) to get whole green molecules highlighted
-            ctx.fillStyle = grd;
-            ctx.strokeStyle = grd;
-            ctx.lineWidth = specs.bonds_width_2D * 2;
-            ctx.moveTo(cx2, cy2);
-            ctx.lineTo(cx3, cy3); // just keep it coming until it is nice and green
+            //ctx.fillStyle = grd;
+            //ctx.strokeStyle = grd;
+            //ctx.lineWidth = specs.bonds_width_2D * 2;
+            //ctx.moveTo(cx2, cy2);
+            //ctx.lineTo(cx3, cy3); // just keep it coming until it is nice and green
             //ctx.stroke(); BUT, don't complicate things, don't do this for nice green bonds!!!
 			
 			/**
@@ -2763,7 +2761,6 @@ ChemDoodle.RESIDUE = (function() {
             **/
 			
 		 }
-		//ctx.globalCompositeOperation = 'source-over';
 	
 		switch (this.bondOrder) {
 		case 0:
@@ -4674,193 +4671,244 @@ ChemDoodle.RESIDUE = (function() {
 
 (function(math, jsb, structures, d2, m) {
 	'use strict';
-	var getControlPoint = function(p, o, controlDist) {
-		if (o.molCenter) {
-			if (o instanceof structures.Atom) {
-				var angle = o.molCenter.angle(p);
-				if (o.bondNumber === 0) {
-					angle += m.PI;
-				}
-				if (o.angles) {
-					for ( var i = 0, ii = o.angles.length; i < ii; i++) {
-						if (m.abs(o.angles[i] - angle) < m.PI / 6) {
-							angle = o.angleOfLeastInterference;
-							break;
-						}
-					}
-				}
-				if (o.bonds) {
-					// point up towards a carbonyl
-					for ( var i = 0, ii = o.bonds.length; i < ii; i++) {
-						var b = o.bonds[i];
-						if (b.bondOrder === 2) {
-							var n = b.getNeighbor(o);
-							if (n.label === 'O') {
-								angle = n.angle(o);
-								break;
-							}
-						}
-					}
-				}
-				return new structures.Point(p.x + controlDist * m.cos(angle), p.y - controlDist * m.sin(angle));
-			} else {
-				var angle = o.a1.angle(o.a2);
-				var perp1 = angle + m.PI / 2;
-				var perp2 = perp1 + m.PI;
-				var t1 = new structures.Point(p.x + controlDist * m.cos(perp1), p.y - controlDist * m.sin(perp1));
-				var t2 = new structures.Point(p.x + controlDist * m.cos(perp2), p.y - controlDist * m.sin(perp2));
-				if (t1.distance(o.molCenter) > t2.distance(o.molCenter)) {
-					return t1;
-				} else {
-					return t2;
-				}
-			}
-		} else {
-			return p;
-		}
-	};
-
-	d2.Pusher = function(o1, o2, numElectron) {
-		this.o1 = o1;
-		this.o2 = o2;
-		this.numElectron = numElectron ? numElectron : 1;
-	};
-	var _ = d2.Pusher.prototype = new d2._Shape();
-	_.drawDecorations = function(ctx, specs) {
-		if (this.isHover) {
-			var p1 = this.o1 instanceof structures.Atom ? new structures.Point(this.o1.x, this.o1.y) : this.o1.getCenter();
-			var p2 = this.o2 instanceof structures.Atom ? new structures.Point(this.o2.x, this.o2.y) : this.o2.getCenter();
-			var ps = [p1, p2];
-			for ( var i = 0, ii = ps.length; i < ii; i++) {
-				var p = ps[i];
-				this.drawAnchor(ctx, specs, p, p === this.hoverPoint);
-			}
-		}
-	};
-	_.draw = function(ctx, specs) {
-		if (this.o1 && this.o2) {
-			ctx.strokeStyle = specs.shapes_color;
-			ctx.fillStyle = specs.shapes_color;
-			ctx.lineWidth = specs.shapes_lineWidth_2D;
-			ctx.lineJoin = 'miter';
-			ctx.lineCap = 'butt';
-			var p1 = this.o1 instanceof structures.Atom ? new structures.Point(this.o1.x, this.o1.y) : this.o1.getCenter();
-			var p2 = this.o2 instanceof structures.Atom ? new structures.Point(this.o2.x, this.o2.y) : this.o2.getCenter();
-			var controlDist = m.max(30, p1.distance(p2)/2);
-			var c1 = getControlPoint(p1, this.o1, controlDist);
-			var c2 = getControlPoint(p2, this.o2, controlDist);
-			// electrons
-			var angle1 = c1.angle(p1);
-			var angle2 = c2.angle(p2);
-			var angleDif = (m.max(angle1, angle2) - m.min(angle1, angle2));
-			while (angleDif + .001 >= m.PI) {
-				angleDif -= m.PI;
-			}
-			if (angleDif < .001) {
-				// in the case where the control tangents are parallel
-				angle1 += m.PI / 6;
-				angle2 += m.PI / 6;
-				c1.x = p1.x + controlDist * m.cos(angle1 + m.PI);
-				c1.y = p1.y - controlDist * m.sin(angle1 + m.PI);
-				c2.x = p2.x + controlDist * m.cos(angle2 + m.PI);
-				c2.y = p2.y - controlDist * m.sin(angle2 + m.PI);
-			}
-			var perpendicular = angle1 + m.PI / 2;
-			var mcosa = m.cos(angle1);
-			var msina = m.sin(angle1);
-			if (specs.pusher_showElectron_2D && this.o1 instanceof structures.Atom) {
-				var pullBack = 5;
-				if (this.o1.isLabelVisible(specs) || this.o1.bondOrder > 1) {
-					pullBack = 8;
-				}
-				p1.x -= mcosa * pullBack;
-				p1.y += msina * pullBack;
-//				if (this.numElectron === 2) {
-//					var difx = Math.cos(perpendicular) * specs.atoms_lonePairSpread_2D / 2;
-//					var dify = -Math.sin(perpendicular) * specs.atoms_lonePairSpread_2D / 2;
-//					ctx.beginPath();
-//					ctx.arc(p1.x + difx, p1.y + dify, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
-//					ctx.fill();
-//					ctx.beginPath();
-//					ctx.arc(p1.x - difx, p1.y - dify, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
-//					ctx.fill();
-//				} else {
-//					ctx.beginPath();
-//					ctx.arc(p1.x, p1.y, specs.atoms_lonePairDiameter_2D, 0, m.PI * 2, false);
-//					ctx.fill();
-//				}
-			}
-			p1.x -= mcosa * 5;
-			p1.y += msina * 5;
-			// arrow
-			var perpendicular = angle2 + m.PI / 2;
-			var retract = specs.shapes_arrowLength_2D * 2 / m.sqrt(3);
-			var mcosa = m.cos(angle2);
-			var msina = m.sin(angle2);
-			var mcosp = m.cos(perpendicular);
-			var msinp = m.sin(perpendicular);
-			p2.x -= mcosa * 5;
-			p2.y += msina * 5;
-			var nap = new structures.Point(p2.x, p2.y);
-			p2.x -= mcosa * retract * 0.8;
-			p2.y += msina * retract * 0.8;
-			var rx1 = nap.x - mcosa * retract * 0.8;
-			var ry1 = nap.y + msina * retract * 0.8;
-			var a1 = new structures.Point(nap.x + mcosp * specs.shapes_arrowLength_2D / 3 - mcosa * retract, nap.y - msinp * specs.shapes_arrowLength_2D / 3 + msina * retract);
-			var a2 = new structures.Point(nap.x - mcosp * specs.shapes_arrowLength_2D / 3 - mcosa * retract, nap.y + msinp * specs.shapes_arrowLength_2D / 3 + msina * retract);
-			var include1 = true, include2 = true;
-			if (this.numElectron === 1) {
-				if (a1.distance(c1) > a2.distance(c1)) {
-					include2 = false;
-				} else {
-					include1 = false;
-				}
-			}
-			ctx.beginPath();
-			ctx.moveTo(nap.x, nap.y);
-			if (include2) {
-				ctx.lineTo(a2.x, a2.y);
-			}
-			ctx.lineTo(rx1, ry1);
-			if (include1) {
-				ctx.lineTo(a1.x, a1.y);
-			}
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
-			// bezier
-			ctx.beginPath();
-			ctx.moveTo(p1.x, p1.y);
-			ctx.bezierCurveTo(c1.x, c1.y, c2.x, c2.y, p2.x, p2.y);
-			ctx.stroke();
-			this.cache = [ p1, c1, c2, p2 ];
-
-            var gradLoc = 0;
-            this.curveBonds = [];
-            this.curveBonds.push(this.cache[0]);
-            while (gradLoc <= 1) {
-                var localGradient = jsb.gradientAtPoint(this.cache, gradLoc);
-                gradLoc += 0.01;
-                if (0.005 < localGradient < 0.005 || 0.995 < localGradient < -0.995) {
-                    var localPoint = jsb.pointOnCurve(this.cache, gradLoc);
-                    var localPointPoint = new structures.Point(localPoint.x, localPoint.y);
-                    this.curveBonds.push(localPointPoint);
-                    gradLoc += 0.01;
+    var getPossibleAngles = function(o) {
+        var as = [];
+        if (o instanceof structures.Atom) {
+            if (o.bondNumber === 0) {
+                as.push(m.PI);
+            } else if (o.angles) {
+                if (o.angles.length === 1) {
+                    as.push(o.angles[0] + m.PI);
+                } else {
+                    for ( var i = 1, ii = o.angles.length; i < ii; i++) {
+                        as.push(o.angles[i - 1] + (o.angles[i] - o.angles[i - 1]) / 2);
+                    }
+                    var firstIncreased = o.angles[0] + m.PI * 2;
+                    var last = o.angles[o.angles.length - 1];
+                    as.push(last + (firstIncreased - last) / 2);
+                }
+                if (o.largestAngle > m.PI) {
+                    // always use angle of least interfearence if it is greater
+                    // than 120
+                    as = [ o.angleOfLeastInterference ];
+                }
+                if (o.bonds) {
+                    // point up towards a carbonyl
+                    for ( var i = 0, ii = o.bonds.length; i < ii; i++) {
+                        var b = o.bonds[i];
+                        if (b.bondOrder === 2) {
+                            var n = b.getNeighbor(o);
+                            if (n.label === 'O') {
+                                as = [ n.angle(o) ];
+                                break;
+                            }
+                        }
+                    }
                 }
             }
-            this.curveBonds.push(this.cache[3]);
-		}
-	};
+        } else {
+            var angle = o.a1.angle(o.a2);
+            as.push(angle + m.PI / 2);
+            as.push(angle + 3 * m.PI / 2);
+        }
+        for ( var i = 0, ii = as.length; i < ii; i++) {
+            while (as[i] > m.PI * 2) {
+                as[i] -= m.PI * 2;
+            }
+            while (as[i] < 0) {
+                as[i] += m.PI * 2;
+            }
+        }
+        return as;
+    };
+    var getPullBack = function(o, specs) {
+        var pullback = 3;
+        if (o instanceof structures.Atom) {
+            if (o.isLabelVisible(specs)) {
+                pullback = 8;
+            }
+            if (o.charge !== 0 || o.numRadical !== 0 || o.numLonePair !== 0) {
+                pullback = 13;
+            }
+        } else if (o instanceof structures.Point) {
+            // this is the midpoint of a bond forming pusher
+            pullback = 0;
+        } else {
+            if (o.bondOrder > 1) {
+                pullback = 5;
+            }
+        }
+        return pullback;
+    };
+    var drawPusher = function(ctx, specs, o1, o2, p1, c1, c2, p2, numElectron, caches) {
+        var angle1 = c1.angle(p1);
+        var angle2 = c2.angle(p2);
+        var perpendicular = angle1 + m.PI / 2;
+        var mcosa = m.cos(angle1);
+        var msina = m.sin(angle1);
+        // pull back from start
+        var pullBack = getPullBack(o1, specs);
+        p1.x -= mcosa * pullBack;
+        p1.y += msina * pullBack;
+        // arrow
+        var perpendicular = angle2 + m.PI / 2;
+        var retract = specs.shapes_arrowLength_2D * 2 / m.sqrt(3);
+        var mcosa = m.cos(angle2);
+        var msina = m.sin(angle2);
+        var mcosp = m.cos(perpendicular);
+        var msinp = m.sin(perpendicular);
+        p2.x -= mcosa * 5;
+        p2.y += msina * 5;
+        var nap = new structures.Point(p2.x, p2.y);
+        // pull back from end
+        pullBack = getPullBack(o2, specs) / 3;
+        nap.x -= mcosa * pullBack;
+        nap.y += msina * pullBack;
+        p2.x -= mcosa * (retract * 0.8 + pullBack);
+        p2.y += msina * (retract * 0.8 + pullBack);
+        var rx1 = nap.x - mcosa * retract * 0.8;
+        var ry1 = nap.y + msina * retract * 0.8;
+        var a1 = new structures.Point(nap.x + mcosp * specs.shapes_arrowLength_2D / 3 - mcosa * retract, nap.y - msinp * specs.shapes_arrowLength_2D / 3 + msina * retract);
+        var a2 = new structures.Point(nap.x - mcosp * specs.shapes_arrowLength_2D / 3 - mcosa * retract, nap.y + msinp * specs.shapes_arrowLength_2D / 3 + msina * retract);
+        var include1 = true, include2 = true;
+        if (numElectron === 1) {
+            if (a1.distance(c1) > a2.distance(c1)) {
+                include2 = false;
+            } else {
+                include1 = false;
+            }
+        }
+        ctx.beginPath();
+        ctx.moveTo(nap.x, nap.y);
+        if (include2) {
+            ctx.lineTo(a2.x, a2.y);
+        }
+        ctx.lineTo(rx1, ry1);
+        if (include1) {
+            ctx.lineTo(a1.x, a1.y);
+        }
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+        // bezier
+        ctx.beginPath();
+        ctx.moveTo(p1.x, p1.y);
+        ctx.bezierCurveTo(c1.x, c1.y, c2.x, c2.y, p2.x, p2.y);
+        ctx.stroke();
+        caches.push([ p1, c1, c2, p2 ]);
+    };
+
+    d2.Pusher = function(o1, o2, numElectron) {
+        this.o1 = o1;
+        this.o2 = o2;
+        this.numElectron = numElectron ? numElectron : 1;
+    };
+    var _ = d2.Pusher.prototype = new d2._Shape();
+    _.drawDecorations = function(ctx, specs) {
+        if (this.isHover) {
+            var p1 = this.o1 instanceof structures.Atom ? new structures.Point(this.o1.x, this.o1.y) : this.o1.getCenter();
+            var p2 = this.o2 instanceof structures.Atom ? new structures.Point(this.o2.x, this.o2.y) : this.o2.getCenter();
+            var ps = [ p1, p2 ];
+            for ( var i = 0, ii = ps.length; i < ii; i++) {
+                var p = ps[i];
+                this.drawAnchor(ctx, specs, p, p === this.hoverPoint);
+            }
+        }
+    };
+    _.draw = function(ctx, specs) {
+        if (this.o1 && this.o2) {
+            ctx.strokeStyle = specs.shapes_color;
+            ctx.fillStyle = specs.shapes_color;
+            ctx.lineWidth = specs.shapes_lineWidth_2D;
+            ctx.lineJoin = 'miter';
+            ctx.lineCap = 'butt';
+            var p1 = this.o1 instanceof structures.Atom ? new structures.Point(this.o1.x, this.o1.y) : this.o1.getCenter();
+            var p2 = this.o2 instanceof structures.Atom ? new structures.Point(this.o2.x, this.o2.y) : this.o2.getCenter();
+            var controlDist = 35;
+            var as1 = getPossibleAngles(this.o1);
+            var as2 = getPossibleAngles(this.o2);
+            var c1, c2;
+            var minDif = Infinity;
+            for ( var i = 0, ii = as1.length; i < ii; i++) {
+                for ( var j = 0, jj = as2.length; j < jj; j++) {
+                    var c1c = new structures.Point(p1.x + controlDist * m.cos(as1[i]), p1.y - controlDist * m.sin(as1[i]));
+                    var c2c = new structures.Point(p2.x + controlDist * m.cos(as2[j]), p2.y - controlDist * m.sin(as2[j]));
+                    var dif = c1c.distance(c2c);
+                    if (dif < minDif) {
+                        minDif = dif;
+                        c1 = c1c;
+                        c2 = c2c;
+                    }
+                }
+            }
+            this.caches = [];
+            if (this.numElectron === -1) {
+                var dist = p1.distance(p2)/2;
+                var angle = p1.angle(p2);
+                var perp = angle+m.PI/2;
+                var mcosa = m.cos(angle);
+                var msina = m.sin(angle);
+                var m1 = new structures.Point(p1.x+(dist-1)*mcosa, p1.y-(dist-1)*msina);
+                var cm1 = new structures.Point(m1.x+m.cos(perp+m.PI/6)*controlDist, m1.y - m.sin(perp+m.PI/6)*controlDist);
+                var m2 = new structures.Point(p1.x+(dist+1)*mcosa, p1.y-(dist+1)*msina);
+                var cm2 = new structures.Point(m2.x+m.cos(perp-m.PI/6)*controlDist, m2.y - m.sin(perp-m.PI/6)*controlDist);
+                drawPusher(ctx, specs, this.o1, m1, p1, c1, cm1, m1, 1, this.caches);
+                drawPusher(ctx, specs, this.o2, m2, p2, c2, cm2, m2, 1, this.caches);
+            } else {
+                if (math.intersectLines(p1.x, p1.y, c1.x, c1.y, p2.x, p2.y, c2.x, c2.y)) {
+                    var tmp = c1;
+                    c1 = c2;
+                    c2 = tmp;
+                }
+                // try to clean up problems, like loops
+                var angle1 = c1.angle(p1);
+                var angle2 = c2.angle(p2);
+                var angleDif = (m.max(angle1, angle2) - m.min(angle1, angle2));
+                if (m.abs(angleDif - m.PI) < .001 && this.o1.molCenter === this.o2.molCenter) {
+                    // in the case where the control tangents are parallel
+                    angle1 += m.PI / 2;
+                    angle2 -= m.PI / 2;
+                    c1.x = p1.x + controlDist * m.cos(angle1 + m.PI);
+                    c1.y = p1.y - controlDist * m.sin(angle1 + m.PI);
+                    c2.x = p2.x + controlDist * m.cos(angle2 + m.PI);
+                    c2.y = p2.y - controlDist * m.sin(angle2 + m.PI);
+                }
+                drawPusher(ctx, specs, this.o1, this.o2, p1, c1, c2, p2, this.numElectron, this.caches);
+            }
+
+        }
+    };
     _.getCoords = function() {
-        return this.cache;
+        return this.caches;
     }
-	_.getPoints = function() {
-        return this.curveBonds;
-	};
-	_.isOver = function(p, barrier) {
-		var r = jsb.distanceFromCurve(p, this.cache);
-		return r.distance < barrier;
-	};
+    _.getPoints = function() {
+        // Getting the points that determine the bounds
+        this.curvePoints = [];
+        for (var i = 0, l = this.caches.length; i < l; i++) {
+            var gradLoc = 0;
+            this.curvePoints.push(this.caches[i][0]);
+            while (gradLoc <= 1) {
+                var localGradient = jsb.gradientAtPoint(this.caches[i], gradLoc);
+                gradLoc += 0.005;
+                if ((0.005 >= localGradient && localGradient >= -0.005) || (0.995 <= localGradient || localGradient <= -0.995)) {
+                    var localPoint = jsb.pointOnCurve(this.caches[i], gradLoc);
+                    var localPointPoint = new structures.Point(localPoint.x, localPoint.y);
+                    this.curvePoints.push(localPointPoint);
+                }
+            }
+            this.curvePoints.push(this.caches[i][3]);
+        }
+        return this.curvePoints;
+    };
+    _.isOver = function(p, barrier) {
+        for ( var i = 0, ii = this.caches.length; i < ii; i++) {
+            var r = jsb.distanceFromCurve(p, this.caches[i]);
+            if (r.distance < barrier) {
+                return true;
+            }
+        }
+        return false;
+    };
 
 })(ChemDoodle.math, ChemDoodle.math.jsBezier, ChemDoodle.structures, ChemDoodle.structures.d2, Math);
 //
@@ -9264,6 +9312,7 @@ ChemDoodle.RESIDUE = (function() {
         var e;
         if ("Line" === c.t) e = new f.Line(new a.Point(c.x1, c.y1), new a.Point(c.x2, c.y2)), e.arrowType = c.a;
         else if ("Pusher" === c.t) {
+
             var d, g;
             e = 0;
             for (var l = b.length; e < l; e++) {
@@ -9675,8 +9724,10 @@ ChemDoodle.monitor = (function(featureDetection, q, document) {
 		this.repaint();
 	};
 	_.loadContent = function(mols, shapes) {
-		this.molecules = mols;
-		this.shapes = shapes;
+        this.molecules = mols?mols:[];
+        this.shapes = shapes?shapes:[];
+        this.repaint();
+        //this.normalise();
 		this.center();
 		if (!(c._Canvas3D && this instanceof c._Canvas3D)) {
 			for ( var i = 0, ii = this.molecules.length; i < ii; i++) {
@@ -9726,6 +9777,25 @@ ChemDoodle.monitor = (function(featureDetection, q, document) {
 		this.specs.scale = 1;
 		this.repaint();
 	};
+//    _.normalise = function() {
+//        var bounds = this.getContentBounds();
+//        var norm = new structures.Point(bounds.minX, bounds.minY);
+//        for ( var i = 0, ii = this.molecules.length; i < ii; i++) {
+//            var mol = this.molecules[i];
+//            for ( var j = 0, jj = mol.atoms.length; j < jj; j++) {
+//                mol.atoms[j].sub(norm);
+//            }
+//        }
+//        for ( var i = 0, ii = this.shapes.length; i < ii; i++) {
+//            if (!(this.shapes[i] instanceof structures.d2.Pusher)) {
+//                var sps = this.shapes[i].getPoints();
+//                for ( var j = 0, jj = sps.length; j < jj; j++) {
+//                    sps[j].sub(norm);
+//                }
+//            }
+//        }
+//        this.specs.scale = 2;
+//    };
 	_.center = function() {
 		var bounds = this.getContentBounds();
 		var center = new structures.Point((this.width - bounds.minX - bounds.maxX) / 2, (this.height - bounds.minY - bounds.maxY) / 2);
@@ -9736,12 +9806,14 @@ ChemDoodle.monitor = (function(featureDetection, q, document) {
 			}
 		}
 		for ( var i = 0, ii = this.shapes.length; i < ii; i++) {
-			var sps = this.shapes[i].getPoints();
-			for ( var j = 0, jj = sps.length; j < jj; j++) {
-				sps[j].add(center);
-			}
+            if (!(this.shapes[i] instanceof structures.d2.Pusher)) {
+                var sps = this.shapes[i].getPoints();
+                for ( var j = 0, jj = sps.length; j < jj; j++) {
+                    sps[j].add(center);
+                }
+            }
 		}
-		this.specs.scale = 1;
+		this.specs.scale = 2;
 		var difX = bounds.maxX - bounds.minX;
 		var difY = bounds.maxY - bounds.minY;
 		if (difX > this.width || difY > this.height) {

@@ -3,7 +3,6 @@
 <meta http-equiv="X-UA-Compatible" content="chrome=1">
 <link rel="stylesheet" href="../install/ChemDoodleWeb.css" type="text/css">
 <link rel="stylesheet" href="../install/sketcher/jquery-ui-1.9.2.custom.css" type="text/css">
-
 <script type="text/javascript" src="../install/ChemDoodleWeb-libs.js"></script>
 <script type="text/javascript" src="../install/ChemDoodleWeb.js"></script>
 <script type="text/javascript" src="../install/sketcher/jquery-ui-1.9.2.custom.min.js"></script>
@@ -25,32 +24,41 @@
 </script>
 	
 <title>ChemPaint made from ChemDoodle Web Component</title>
+
 </head>
-<!-- <body style="background-color:#CCFFCC;">  -->
-<body style="background-color:#F0F0F0">
-	
-<div>
-<script>
-	ChemDoodle.ELEMENT['H'].jmolColor = 'black';
-	ChemDoodle.ELEMENT['C'].jmolColor = '#737373';
-	ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
-	var sketcher = new ChemDoodle.SketcherCanvas('sketcher', 800, 570,{useServices:false, isMobile:true});
-	sketcher.specs.atoms_displayTerminalCarbonLabels_2D = false;
-	sketcher.specs.atoms_useJMOLColors = true;
-	sketcher.specs.bonds_clearOverlaps_2D = false; // If this is true you need to change the globalCompisitionOperation before drawing the overlap background
-	sketcher.specs.bondLength_2D = 50;
-	sketcher.specs.bonds_symmetrical_2D = false;
-	sketcher.specs.bonds_saturationWidth_2D = .18;
-	//sketcher.specs.bonds_overlapClearWidth_2D = 0.7;
-	//sketcher.specs.backgroundColor = undefined;
-	sketcher.specs.scale = 1;
-	sketcher.specs.shapes_color = 'black';
-	sketcher.repaint();
-</script>
-<div id="tempBox" style="display:none">
-</div>
-		
-</div>
-	
+<body style="background-color:#F0F0F0;">
+    <div id="container"  style="">
+        <div id="mySketcher"></div>
+    </div>
+    <script>
+        ChemDoodle.ELEMENT['H'].jmolColor = 'black';
+        ChemDoodle.ELEMENT['C'].jmolColor = '#737373';
+        ChemDoodle.ELEMENT['S'].jmolColor = '#B9A130';
+        var sketcher = new ChemDoodle.SketcherCanvas('mySketcher', 800, 570,{useServices:false, isMobile:true});
+        sketcher.specs.atoms_displayTerminalCarbonLabels_2D = false;
+        sketcher.specs.atoms_useJMOLColors = true;
+        sketcher.specs.bonds_clearOverlaps_2D = false; // If this is true you need to change the globalCompisitionOperation before drawing the overlap background
+        sketcher.specs.bondLength_2D = 50;
+        sketcher.specs.bonds_symmetrical_2D = false;
+        sketcher.specs.bonds_saturationWidth_2D = .18;
+        //sketcher.specs.bonds_overlapClearWidth_2D = 0.7;
+        //sketcher.specs.backgroundColor = undefined;
+        sketcher.specs.scale = 1;
+        sketcher.specs.shapes_color = 'black';
+        sketcher.repaint();
+    </script>
+    <br>
+    <div id="tempBox" style="display: none">
+        <script>
+            var viewer = new ChemDoodle.ViewerCanvas('myPNG', 100, 100);
+            viewer.specs.atoms_displayTerminalCarbonLabels_2D = false;
+            viewer.specs.atoms_useJMOLColors = true;
+            viewer.specs.bonds_clearOverlaps_2D = false; // If this is true you need to change the globalCompisitionOperation before drawing the overlap background
+            viewer.specs.bondLength_2D = 50;
+            viewer.specs.bonds_symmetrical_2D = false;
+            viewer.specs.bonds_saturationWidth_2D = .18;
+            viewer.repaint();
+        </script>
+    </div>
 </body>
 </html>
