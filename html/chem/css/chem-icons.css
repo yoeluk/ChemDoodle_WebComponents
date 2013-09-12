@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'chemglyphsregular';;
+    src: url('../fonts/font3225mod-webfont.eot');
+    src: url('../fonts/font3225mod-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/font3225mod-webfont.woff') format('woff'),
+    url('../fonts/font3225mod-webfont.ttf') format('truetype'),
+    url('../fonts/font3225mod-webfont.svg#font3225mod-webfont') format('svg')
+}.chemglyph:before {
+    font-family: 'chemglyphsregular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    height:20px !important;
+    width:20px !important;
+    text-align: center;
+    display:block;
+    margin-left:5px;
+    line-height: 1.4; -webkit-font-smoothing: antialiased
+}.chemglyph-single-bond:before {
+    content: "a";
+}.chemglyph-double-bond:before {
+    content: "b";
+}.chemglyph-tripple-bond:before {
+    content: "c";
+}.chemglyph-recessed-bond:before {
+    content: "d";
+}.chemglyph-protruding-bond:before {
+    content: "e";
+}.chemglyph-resonance-bond:before {
+    content: "f";
+}.chemglyph-half-bond:before {
+    content: "g";
+}.chemglyph-multiple-bonds:before {
+    content: "h";
+    font-size: 13px;
+}.chemglyph-ring-3:before {
+    content: "i";
+    font-size: 13px;
+}.chemglyph-ring-4:before {
+    content: "j";
+    font-size: 13px;
+}.chemglyph-ring-5:before {
+    content: "k";
+    font-size: 13px;
+}.chemglyph-ring-6:before {
+    content: "l";
+    font-size: 13px;
+}.chemglyph-bencene:before {
+    content: "m";
+    font-size: 13px;
+}.chemglyph-ring-7:before {
+    content: "n";
+    font-size: 13px;
+}.chemglyph-ring-8:before {
+    content: "o";
+    font-size: 13px;
+}
+
+
+

@@ -2716,7 +2716,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 	d.BOND_PROTRUDING = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAl0lEQVR42mNgoAwEAHEDA5WAChC/B+L/1DCUBYivQw37Tw1Dl6MZRpGhBTgM+w3EFaQaZgPEn7EY9hiIPUg1TAaI72Mx7DAQK5ATCbuxGNYPxDzkhFs3lvCKoCTxIht2G4g1qJF4QXg9uV5ET7xkJQlciZesJIEr8ZKVJHAl3n5Kwgs58d6mJEmgR8J0SpIENq/yMAx7AADDzz/MOB6JagAAAABJRU5ErkJggg==';
 	d.BOND_RECESSED = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAQUlEQVR42mNgGGQghJqGBQDxbyBOoaahCYPSUGyaYYYOI28y4PDm4IxNBmp6k2JAE28OPvAdiBuoaaALwyggBQAA+tATdpIiCMcAAAAASUVORK5CYII=';
 	d.BOND_RESONANCE = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAfUlEQVR42mNgoA7gZqAicADi+0DMRS3DXgGx/aA3zAOIt1PLMBMgfg01lGLDXKCGxVArzG4DsQ81I4CFGoYpkGsQNsMMoIlYhVqGPaZWbMKyF9UioIJaLqNqdnIg11W4IuA5uWHGDQ1w9Nj0ocS7sMJRh5LYxAY4oC4kGwAAJbAmYdoaIPoAAAAASUVORK5CYII=';
-	d.BOND_SINGLE = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAMklEQVR42mNgGMSAm5qGOQDxfSDmopZhr4DYftSwUcNGDRs1jP6GcUPLM6oYBgNUKRwBiE8XjxDJvZUAAAAASUVORK5CYII=';
+    d.BOND_SINGLE = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAMklEQVR42mNgGMSAm5qGOQDxfSDmopZhr4DYftSwUcNGDRs1jP6GcUPLM6oYBgNUKRwBiE8XjxDJvZUAAAAASUVORK5CYII=';
 	d.BOND_TRIPLE = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAUUlEQVR42mNgoAxwM1AROADxfSDmopZhr4DYnhouRTeMIpdiM4xslxIyDOZSqhmGzB81bNSwATeMG5rCqWIYDHBR0zBiXUoW4KKmYbhcShIAAA2MPiFy45L3AAAAAElFTkSuQmCC';
 	d.BOND_ZERO = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAH0lEQVR42mNgGAVkgPtQPHgNHA2z0TAbDbPRMBsAAADVkQ3x7nq43wAAAABJRU5ErkJggg==';
 	d.BROMINE = 'iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA3UlEQVR42mNgGAVUB8s0NDYu09T8D8LLNTVvA+lZKzQ1dSg18MRSTU2X5RoarUD2dyC+SKmBu+B8Tc0FQPx3prExK1UMXK6lNRPo2rNIFnQB1UwCikUs09K6DuQXEGXgQg0NYaCGGCD7xVItLX8kA5cD8R1QsADDOBZosCoxBv6F4v9AQxNR5CEGPl2kpydGkpdXqalJA+ksIH4AxLNRDASqITsMgV6yA7kUlnQoNhCYdBRABgINzqTEwINAA+SXq6ubANnrgfgfiE2Jgf+h+C0QrwSKBZMdhqNg4AEAUSSF6Clvq/4AAAAASUVORK5CYII=';
@@ -2795,13 +2795,20 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			sb.push(this.tooltip);
 			sb.push('" /><label for="');
 			sb.push(this.id);
-			sb.push('"><img id="');
-			sb.push(this.id);
-			sb.push('_icon" title="');
-			sb.push(this.tooltip);
-			sb.push('" width="20" height="20" src="');
-			sb.push(imageDepot.getURI(this.icon));
-			sb.push('"></label>');
+            if ( this.icon['chemGlyph'] ){
+                sb.push('"><span id="');
+                sb.push(this.id);
+                sb.push('_icon" class="chemglyph '+this.icon['chemGlyph']+'"');
+                sb.push('></span></label>');
+            } else {
+                sb.push('"><img id="');
+                sb.push(this.id);
+                sb.push('_icon" title="');
+                sb.push(this.tooltip);
+                sb.push('" width="20" height="20" src="');
+                sb.push(imageDepot.getURI(this.icon));
+                sb.push('"></label>');
+            }
 		} else {
 			sb.push('<button id="');
 			sb.push(this.id);
@@ -3328,7 +3335,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		this.buttonSet.setup();
 		var self = this;
 		q.each(this.buttonSet.buttons, function(index, value) {
-			self.buttonSet.buttons[index].getElement().click(function() {
+			self.buttonSet.buttons[index].getElement().bind('click', function() {
 				self.dummy.absorb(self.buttonSet.buttons[index]);
 				self.dummy.select();
 				self.dummy.func();
@@ -3364,8 +3371,13 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		});
 	};
 	_.absorb = function(button) {
-		q('#' + this.id + '_icon').attr('src', imageDepot.getURI(button.icon));
-		this.func = button.func;
+        if ( button && q('#' + this.id + '_icon').hasClass('chemglyph') ) {
+            var listOfClasses = q('#' + this.id + '_icon').attr('class').split(/\s+/);
+            q('#' + this.id + '_icon').attr('class', q('#' + button.id + '_icon').attr('class') );
+        } else {
+            q('#' + this.id + '_icon').attr('src', imageDepot.getURI(button.icon));
+        }
+        this.func = button.func;
 	};
 
 })(ChemDoodle.sketcher.gui.desktop, ChemDoodle.sketcher.gui.imageDepot, jQuery);
@@ -3715,31 +3727,31 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 	};
 	_.makeBondSet = function(self) {
 		this.bondSet = new desktop.ButtonSet(self.sketcher.id + '_buttons_bond');
-		this.buttonSingle = new desktop.Button(self.sketcher.id + '_button_bond_single', imageDepot.BOND_SINGLE, 'Single Bond', function() {
+		this.buttonSingle = new desktop.Button(self.sketcher.id + '_button_bond_single', {chemGlyph : "chemglyph-single-bond"}, 'Single Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 1;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_NONE;
 		});
 		this.bondSet.buttons.push(this.buttonSingle);
-		this.buttonRecessed = new desktop.Button(self.sketcher.id + '_button_bond_recessed', imageDepot.BOND_RECESSED, 'Recessed Bond', function() {
+		this.buttonRecessed = new desktop.Button(self.sketcher.id + '_button_bond_recessed', {chemGlyph : "chemglyph-recessed-bond"}, 'Recessed Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 1;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_RECESSED;
 		});
 		this.bondSet.buttons.push(this.buttonRecessed);
-		this.buttonProtruding = new desktop.Button(self.sketcher.id + '_button_bond_protruding', imageDepot.BOND_PROTRUDING, 'Protruding Bond', function() {
+		this.buttonProtruding = new desktop.Button(self.sketcher.id + '_button_bond_protruding', {chemGlyph : "chemglyph-protruding-bond"}, 'Protruding Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 1;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_PROTRUDING;
 		});
 		this.bondSet.buttons.push(this.buttonProtruding);
-		this.buttonDouble = new desktop.Button(self.sketcher.id + '_button_bond_double', imageDepot.BOND_DOUBLE, 'Double Bond', function() {
+		this.buttonDouble = new desktop.Button(self.sketcher.id + '_button_bond_double', {chemGlyph : "chemglyph-double-bond"}, 'Double Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 2;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_NONE;
 		});
 		this.bondSet.buttons.push(this.buttonDouble);
-		this.buttonBond = new desktop.DummyButton(self.sketcher.id + '_button_bond', imageDepot.BOND_TRIPLE, 'Other Bond');
+		this.buttonBond = new desktop.DummyButton(self.sketcher.id + '_button_bond', {chemGlyph : "chemglyph-tripple-bond"}, 'Other Bond');
 		this.bondSet.buttons.push(this.buttonBond);
 		this.bondSet.addDropDown('More Bonds');
 		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_zero', imageDepot.BOND_ZERO, 'Zero Bond (Ionic/Hydrogen)', function() {
@@ -3747,22 +3759,22 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 0;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_NONE;
 		}));
-		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_half', imageDepot.BOND_HALF, 'Half Bond', function() {
+		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_half', {chemGlyph : "chemglyph-half-bond"}, 'Half Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 0.5;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_NONE;
 		}));
-		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_resonance', imageDepot.BOND_RESONANCE, 'Resonance Bond', function() {
+		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_resonance', {chemGlyph : "chemglyph-resonance-bond"}, 'Resonance Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 1.5;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_NONE;
 		}));
-		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_ambiguous_double', imageDepot.BOND_DOUBLE_AMBIGUOUS, 'Ambiguous Double Bond', function() {
+		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_ambiguous_double', {chemGlyph : "chemglyph-multiple-bonds"}, 'Ambiguous Double Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 2;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_AMBIGUOUS;
 		}));
-		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_triple', imageDepot.BOND_TRIPLE, 'Triple Bond', function() {
+		this.bondSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_bond_triple', {chemGlyph : "chemglyph-tripple-bond"}, 'Triple Bond', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_BOND);
 			self.sketcher.stateManager.STATE_NEW_BOND.bondOrder = 3;
 			self.sketcher.stateManager.STATE_NEW_BOND.stereo = structures.Bond.STEREO_NONE;
@@ -3771,43 +3783,43 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 	};
 	_.makeRingSet = function(self) {
 		this.ringSet = new desktop.ButtonSet(self.sketcher.id + '_buttons_ring');
-		this.buttonCyclohexane = new desktop.Button(self.sketcher.id + '_button_ring_cyclohexane', imageDepot.CYCLOHEXANE, 'Cyclohexane Ring', function() {
+		this.buttonCyclohexane = new desktop.Button(self.sketcher.id + '_button_ring_cyclohexane', {chemGlyph : "chemglyph-ring-6"}, 'Cyclohexane Ring', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_RING);
 			self.sketcher.stateManager.STATE_NEW_RING.numSides = 6;
 			self.sketcher.stateManager.STATE_NEW_RING.unsaturated = false;
 		});
 		this.ringSet.buttons.push(this.buttonCyclohexane);
-		this.buttonBenzene = new desktop.Button(self.sketcher.id + '_button_ring_benzene', imageDepot.BENZENE, 'Benzene Ring', function() {
+		this.buttonBenzene = new desktop.Button(self.sketcher.id + '_button_ring_benzene', {chemGlyph : "chemglyph-bencene"}, 'Benzene Ring', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_RING);
 			self.sketcher.stateManager.STATE_NEW_RING.numSides = 6;
 			self.sketcher.stateManager.STATE_NEW_RING.unsaturated = true;
 		});
 		this.ringSet.buttons.push(this.buttonBenzene);
-		this.buttonRing = new desktop.DummyButton(self.sketcher.id + '_button_ring', imageDepot.CYCLOPENTANE, 'Other Ring');
+		this.buttonRing = new desktop.DummyButton(self.sketcher.id + '_button_ring', {chemGlyph : "chemglyph-ring-5"}, 'Other Ring');
 		this.ringSet.buttons.push(this.buttonRing);
 		this.ringSet.addDropDown('More Rings');
-		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclopropane', imageDepot.CYCLOPROPANE, 'Cyclopropane Ring', function() {
+		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclopropane', {chemGlyph : "chemglyph-ring-3"}, 'Cyclopropane Ring', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_RING);
 			self.sketcher.stateManager.STATE_NEW_RING.numSides = 3;
 			self.sketcher.stateManager.STATE_NEW_RING.unsaturated = false;
 		}));
-		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclobutane', imageDepot.CYCLOBUTANE, 'Cyclobutane Ring', function() {
+		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclobutane', {chemGlyph : "chemglyph-ring-4"}, 'Cyclobutane Ring', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_RING);
 			self.sketcher.stateManager.STATE_NEW_RING.numSides = 4;
 			self.sketcher.stateManager.STATE_NEW_RING.unsaturated = false;
 		}));
-		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclopentane', imageDepot.CYCLOPENTANE, 'Cyclopentane Ring', function() {
+		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclopentane', {chemGlyph : "chemglyph-ring-5"}, 'Cyclopentane Ring', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_RING);
 			self.sketcher.stateManager.STATE_NEW_RING.numSides = 5;
 			self.sketcher.stateManager.STATE_NEW_RING.unsaturated = false;
 		}));
 		this.ringSet.dropDown.defaultButton = this.ringSet.dropDown.buttonSet.buttons[this.ringSet.dropDown.buttonSet.buttons.length - 1];
-		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cycloheptane', imageDepot.CYCLOHEPTANE, 'Cycloheptane Ring', function() {
+		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cycloheptane', {chemGlyph : "chemglyph-ring-7"}, 'Cycloheptane Ring', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_RING);
 			self.sketcher.stateManager.STATE_NEW_RING.numSides = 7;
 			self.sketcher.stateManager.STATE_NEW_RING.unsaturated = false;
 		}));
-		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclooctane', imageDepot.CYCLOOCTANE, 'Cyclooctane Ring', function() {
+		this.ringSet.dropDown.buttonSet.buttons.push(new desktop.Button(self.sketcher.id + '_button_ring_cyclooctane', {chemGlyph : "chemglyph-ring-8"}, 'Cyclooctane Ring', function() {
 			self.sketcher.stateManager.setState(self.sketcher.stateManager.STATE_NEW_RING);
 			self.sketcher.stateManager.STATE_NEW_RING.numSides = 8;
 			self.sketcher.stateManager.STATE_NEW_RING.unsaturated = false;
