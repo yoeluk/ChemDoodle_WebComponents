@@ -3523,6 +3523,7 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		this.makeLabelSet(this);
 
 		// bond set
+       if ( ! ios ) ios = "";
 		this.makeBondSet(this);
 
 		// ring set
@@ -3572,7 +3573,6 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		} else {
 			document.write(sb.join(''));
 		}
-        //q('.chemglyph').button({ text: true });
 	};
 	_.setup = function() {
 		//if (this.sketcher.oneMolecule) {
