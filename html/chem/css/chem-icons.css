@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'chemglyphsregular';;
+    font-family: 'chemglyphsregular';
     src: url('../fonts/chemglyphs-webfont.eot');
     src: url('../fonts/chemglyphs-webfont.eot?#iefix') format('embedded-opentype'),
     url('../fonts/chemglyphs-webfont.woff') format('woff'),
@@ -8,7 +8,7 @@
 }.chemglyph:before {
     font-family: 'chemglyphsregular';
     font-style: normal;
-    font-weight: 200;
+    font-weight: 300;
     height:20px !important;
     width:20px !important;
     font-size: 10px;
@@ -18,12 +18,11 @@
     vertical-align: middle;
     display:block;
     line-height: 2;
-    -webkit-font-smoothing: antialiased;
 }.chemglyph-single-bond:before {
     content: "a";
 }.chemglyph-double-bond:before {
     content: "b";
-}.chemglyph-tripple-bond:before {
+}.chemglyph-triple-bond:before {
     content: "c";
 }.chemglyph-recessed-bond:before {
     content: "d";
@@ -43,7 +42,7 @@
     content: "k";
 }.chemglyph-ring-6:before {
     content: "l";
-}.chemglyph-bencene:before {
+}.chemglyph-benzene:before {
     content: "m";
 }.chemglyph-ring-7:before {
     content: "n";
