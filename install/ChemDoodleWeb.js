@@ -4373,11 +4373,12 @@ ChemDoodle.RESIDUE = (function() {
 		ctx.lineTo(maxX, maxY);
 		ctx.lineTo(maxX, minY);
 		ctx.lineTo(maxX - lip, minY);
+        //color selected bracket
 		if (this.isLassoed) {
 			var grd = ctx.createLinearGradient(this.p1.x, this.p1.y, this.p2.x, this.p2.y);
-			grd.addColorStop(0, 'rgba(212, 99, 0, 0)');
-			grd.addColorStop(0.5, 'rgba(212, 99, 0, 0.8)');
-			grd.addColorStop(1, 'rgba(212, 99, 0, 0)');
+            grd.addColorStop(0, 'rgba(0, 160, 255, 0)'); //grd.addColorStop(0, 'rgba(212, 99, 0, 0)');
+			grd.addColorStop(0.5, 'rgba(0, 160, 255, 0.8)');// grd.addColorStop(0.5, 'rgba(212, 99, 0, 0.8)');
+            grd.addColorStop(1, 'rgba(0, 160, 255, 0)'); //grd.addColorStop(1, 'rgba(212, 99, 0, 0)');
 			ctx.lineWidth = specs.shapes_lineWidth_2D + 5;
 			ctx.strokeStyle = grd;
 			ctx.lineJoin = 'miter';
@@ -4455,9 +4456,9 @@ ChemDoodle.RESIDUE = (function() {
 	_.draw = function(ctx, specs) {
 		if (this.isLassoed) {
 			var grd = ctx.createLinearGradient(this.p1.x, this.p1.y, this.p2.x, this.p2.y);
-			grd.addColorStop(0, 'rgba(212, 99, 0, 0)');
-			grd.addColorStop(0.5, 'rgba(212, 99, 0, 0.8)');
-			grd.addColorStop(1, 'rgba(212, 99, 0, 0)');
+            grd.addColorStop(0, 'rgba(0, 160, 255, 0)'); //grd.addColorStop(0, 'rgba(212, 99, 0, 0)');
+            grd.addColorStop(0.5, 'rgba(0, 160, 255, 0.8)');// grd.addColorStop(0.5, 'rgba(212, 99, 0, 0.8)');
+            grd.addColorStop(1, 'rgba(0, 160, 255, 0)'); //grd.addColorStop(1, 'rgba(212, 99, 0, 0)');
 			var useDist = 2.7;
 			var perpendicular = this.p1.angle(this.p2) + m.PI / 2;
 			var mcosp = m.cos(perpendicular);

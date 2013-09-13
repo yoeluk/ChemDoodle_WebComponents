@@ -229,7 +229,7 @@ button.ui-button-icons-only {
 /* button text element */
 .ui-button .ui-button-text {
 	display: block;
-	line-height: 1.4;
+	line-height: 1;
 }
 .ui-button-text-only .ui-button-text {
 	padding: 8px;
@@ -833,10 +833,10 @@ body .ui-tooltip {
 	color: #2faef1;
 	text-decoration: none;
 }
-.ui-state-hover,
+
+.ui-state-hover, .ui-state-focus,
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
-.ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
 	border: 1px solid #4e86f5;
