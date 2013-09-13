@@ -2474,8 +2474,8 @@ ChemDoodle.RESIDUE = (function() {
 			 var compositeOperation = ctx.globalCompositeOperation;
 			 ctx.globalCompositeOperation = 'destination-over';
 			 var grd = ctx.createRadialGradient(this.x - 1, this.y - 1, 0, this.x, this.y, 8);
-			 grd.addColorStop(0, 'rgba(186, 229, 255, 1)');//'rgba(212, 99, 0, 0)');
-			 grd.addColorStop(0.65, 'rgba(0, 160, 255, 1)');//'rgba(121, 207, 25, 1)');//'rgba(212, 99, 0, 0.8)');
+			 grd.addColorStop(0, 'rgba(186, 229, 255, 1)'); //'rgba(212, 99, 0, 0)');
+			 grd.addColorStop(0.65, 'rgba(0, 160, 255, 1)'); //'rgba(121, 207, 25, 1)');//'rgba(212, 99, 0, 0.8)');
 			 ctx.fillStyle = grd;
 			 ctx.beginPath();
 			 ctx.arc(this.x, this.y, 5, 0, m.PI * 2, false);
