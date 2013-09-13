@@ -3523,7 +3523,6 @@ ChemDoodle.sketcher.gui.imageDepot = (function() {
 		this.makeLabelSet(this);
 
 		// bond set
-       if ( ! ios ) ios = "";
 		this.makeBondSet(this);
 
 		// ring set
