@@ -2,42 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e3e2287-b245-4d43-986c-c53c114ffc5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/chem/fonts/chemglyphs-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/chem/fonts/chemglyphs-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/chem/fonts/chemglyphs-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/html/chem/fonts/chemglyphs-webfont.svg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/font3225mod-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/font3225mod-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/font3225mod-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/font3225mod-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/ringbondsink-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/ringbondsink-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/ringbondsink-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/html/chem/fonts/ringbondsink-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_gloss-wave_20_b81900_500x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_gloss-wave_35_e99a01_500x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_highlight-hard_70_4c9e1f_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_highlight-soft_100_f9f8f6_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_highlight-soft_75_def604_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_inset-soft_100_f3ebe2_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_inset-soft_100_fafaf5_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-icons_228ef1_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-icons_ef8c08_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-icons_f9c37b_256x240.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_diagonals-thick_18_b81900_40x40.png" afterPath="$PROJECT_DIR$/install/sketcher/images/ui-bg_diagonals-thick_18_b81900_40x40.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-bg_flat_10_000000_40x100.png" afterPath="$PROJECT_DIR$/install/sketcher/images/ui-bg_flat_10_000000_40x100.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/install/sketcher/images/ui-icons_222222_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-icons_ffd27a_256x240.png" afterPath="$PROJECT_DIR$/install/sketcher/images/ui-icons_ffd27a_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/images/ui-icons_ffffff_256x240.png" afterPath="$PROJECT_DIR$/install/sketcher/images/ui-icons_ffffff_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/ChemDoodleWeb.js" afterPath="$PROJECT_DIR$/install/ChemDoodleWeb.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/chem/css/chem-icons.css" afterPath="$PROJECT_DIR$/html/chem/css/chem-icons.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/ChemDoodleWeb-sketcher.js" afterPath="$PROJECT_DIR$/install/sketcher/ChemDoodleWeb-sketcher.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/html/index.html" afterPath="$PROJECT_DIR$/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sketcher/jquery-ui-1.10.3.custom.css" afterPath="$PROJECT_DIR$/install/sketcher/jquery-ui-1.10.3.custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ChemDoodle_WebComponents.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379060015949" ignored="false" />
+    <file path="/Dummy.txt" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379062046953" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xhtml1-frameset.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/XMLSchema-instance.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/catalog.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658992" ignored="false" />
@@ -53,12 +24,16 @@
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xslt-1_0.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xslt-2_0.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/lib/webstorm.jar!/standardSchemas/xml.xsd" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1370546658993" ignored="false" />
-    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/html/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378930631244" ignored="false" />
-    <file path="/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378930555993" ignored="false" />
-    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/install/sketcher/jquery-ui-1.10.3.custom.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378893099947" ignored="false" />
-    <file path="/jquery-ui-1.10.3.custom.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378892615873" ignored="false" />
-    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/install/sketcher/ChemDoodleWeb-sketcher.js" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378933055972" ignored="false" />
-    <file path="/ChemDoodleWeb-sketcher.js" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1378932841363" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/html/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379078289225" ignored="false" />
+    <file path="/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379078283375" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/install/sketcher/jquery-ui-1.10.3.custom.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379069777500" ignored="false" />
+    <file path="/jquery-ui-1.10.3.custom.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379070475231" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/install/sketcher/ChemDoodleWeb-sketcher.js" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379078484289" ignored="false" />
+    <file path="/ChemDoodleWeb-sketcher.js" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379077845777" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/dev/iPad/html/chem/css/chem-icons.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379076307964" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/iPad/html/index.html" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379065371866" ignored="false" />
+    <file path="$USER_HOME$/Sites/Remote/lewisdots.com/public/ChemPaint/iPad/install/sketcher/jquery-ui-1.10.3.custom.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379070535916" ignored="false" />
+    <file path="/chem-icons.css" changelist="9e3e2287-b245-4d43-986c-c53c114ffc5a" time="1379073478189" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,10 +56,21 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="133" selection-start="13" selection-end="13" vertical-scroll-proportion="0.018939395">
+            <state line="7" column="50" selection-start="415" selection-end="415" vertical-scroll-proportion="0.13257575">
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChemDoodleWeb.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2465" column="143" selection-start="70594" selection-end="70594" vertical-scroll-proportion="-3.7692308">
+              <folding>
+                <marker date="1379062045000" expanded="false" signature="320906:320930" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -114,8 +100,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="291" />
-    <option name="y" value="65" />
+    <option name="x" value="351" />
+    <option name="y" value="22" />
     <option name="width" value="1576" />
     <option name="height" value="975" />
   </component>
@@ -152,6 +138,62 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ChemDoodle_WebComponents" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="install" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="install" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ChemDoodle_WebComponents" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -240,13 +282,22 @@
       <created>1378978991342</created>
       <updated>1378978991342</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add iOS 7 theme and chemglyphs">
+      <created>1379061749491</created>
+      <updated>1379061749492</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add iOS 7 theme and chemglyphs">
+      <created>1379062060991</created>
+      <updated>1379062060991</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="291" y="65" width="1576" height="975" extended-state="0" />
+    <frame x="351" y="22" width="1576" height="975" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24933404" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -261,7 +312,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -364,7 +414,9 @@
     <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1379062045000" expanded="false" signature="320906:320930" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -381,7 +433,9 @@
     <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4779" column="135" selection-start="150659" selection-end="150659" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1379062045000" expanded="false" signature="320906:320930" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -395,21 +449,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
+    <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb-libs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="28" selection-start="2789" selection-end="2789" vertical-scroll-proportion="1.0661764">
-          <folding />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb-libs.js">
+    <entry file="file://$PROJECT_DIR$/install/ChemDoodleWeb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+        <state line="2465" column="143" selection-start="70594" selection-end="70594" vertical-scroll-proportion="-3.7692308">
+          <folding>
+            <marker date="1379062045000" expanded="false" signature="320906:320930" placeholder="..." />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="133" selection-start="13" selection-end="13" vertical-scroll-proportion="0.018939395">
+        <state line="7" column="50" selection-start="415" selection-end="415" vertical-scroll-proportion="0.13257575">
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
